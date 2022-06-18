@@ -7,14 +7,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Dml World',
-  tagline: 'Dmlworld',
+  tagline: 'A well built, optimized website, focused on your needs.',
   url: 'https://dml.world',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Dml World Inc', // Usually your GitHub org/user name.
+  projectName: 'Dml World', // Usually your repo name.
+      
 
   presets: [
     [
@@ -25,43 +26,59 @@ const config = {
           routeBasePath:'/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/DmlTheDev/dml-docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/DmlTheDev/dml-docs/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-5187P9K1PV',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        apiKey: '06957d1ddd92e9a45d3130367c376f52',
+        indexName: 'dmlworld',
+        contextualSearch: true,
+        appId: '6XJCH4JQR1',
+        // placeholder: 
+      },
       navbar: {
-        title: 'My Site',
+        title: 'Dml World',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/favicon.ico',
         },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/DmlTheDev/',
             label: 'GitHub',
             position: 'right',
           },
+          {
+            href: 'https://discordapp.com/invite/YYR2Fg6A6B',
+            label: 'Discord',
+            position: 'right',
+          },
+          
         ],
       },
       footer: {
@@ -71,8 +88,29 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Home',
+                to: '/intro',
+              },
+            ],
+          },
+          {
+            title: 'Contact',
+            items: [
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/users/18221086/dml/',
+              },
+              {
+                label: 'Github',
+                href: 'https://github.com/DmlTheDev/',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/DmlDev/',
+              },
+              {
+                label: 'Replit',
+                href: 'https://replit.com/@LinuxUser15/',
               },
             ],
           },
@@ -80,16 +118,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Discord Server',
+                href: 'https://discordapp.com/invite/YYR2Fg6A6B',
               },
             ],
           },
@@ -101,13 +131,14 @@ const config = {
                 to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Website GitHub Repo',
+                href: 'https://github.com/DmlTheDev/dml-docs',
               },
+              
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © 2019 - ${new Date().getFullYear()} Dml World, Inc. - v2.3.2`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -115,5 +146,17 @@ const config = {
       },
     }),
 };
-
+// module.exports = {
+//   presets: [
+//     [
+//       '@docusaurus/preset-classic',
+//       {
+//         gtag: {
+//           trackingID: 'G-226F0LR9KE',
+//           anonymizeIP: true,
+//         },
+//       },
+//     ],
+//   ],
+// };
 module.exports = config;
